@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="layout/css/layout-index.css">
+    <script src="front/common/jquery/jquery-2.0.3.min.js"></script>
+    <script src="front/common/content_plugin/markdown_prism.js"></script>
+
+    <script src="front/common/avalon/avalon.all.js"></script>
+    <!-- <script src="front/common/seajs/sea.js"></script> -->
+    <script src="sea.js"></script>
+    <title>dashboard</title>
+</head>
+<body>
+    <aside></aside>
+    <div id="main">
+        <header></header>
+        <div id="writer">
+            <div id="md-ctn">
+                <!-- 获取innerText带有换行样式的关键: iframe中body可编辑 ! -->
+                <iframe src="partial/md-edit.html" frameborder="0" name="md" id="iframe-md"></iframe>
+            </div>
+            <!-- <a href="javascript:void(0)" class="btn" id="export">Convert</a> -->
+            <div id="preview"></div>
+        </div>
+    </div>
+
+    <script>
+        // seajs引用文件的路径,很有问题,跟浏览器中完全不一样
+        // 所以将seajs源文件和index.html放在同目录下, 方便识别相对路径
+        console.log( window.location.protocol );
+        seajs.use('front/controller/writerCtrl');
+    </script>
+    <!-- <script src="front/viewer/writer.js"></script> -->
+</body>
+</html>

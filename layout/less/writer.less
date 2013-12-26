@@ -1,0 +1,57 @@
+@import "config.less";
+@import "mixin.less";
+
+@font-face {
+    font-family: 'anonymous_pro_minusregular';
+    src: url('../font/anonymous_pro_minus-webfont.eot');
+    src: url('../font/anonymous_pro_minus-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/anonymous_pro_minus-webfont.woff') format('woff'),
+    url('../font/anonymous_pro_minus-webfont.ttf') format('truetype'),
+    url('../font/anonymous_pro_minus-webfont.svg#anonymous_pro_minusregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#writer{
+    position: absolute;
+    top: @headerH + @mainP;
+    left: @mainP;
+    right: @mainP;
+    bottom: @mainP;
+    background-color: #fff;
+
+    font-family: 'Anonymous Pro';
+
+    #export{
+      float: left;
+    }
+}
+
+#md-ctn, #preview{
+    line-height: 1.35;
+}
+#md-ctn{
+    float: left;
+    width: @mdW;
+    height: 100%;
+    color: @mdC;
+    background-color: @mdBGC;
+    overflow-y: auto;
+    overflow: hidden;
+    font-family: 'Anonymous Pro';
+    &:focus{
+        outline: none;
+    }
+
+    #iframe-md{
+      height: 100%;
+      width: 100%;
+    }    
+}
+
+#preview{
+    margin-left:  100% - @mdW;
+    height: 100%;
+    overflow: auto;
+    font-family: 'Anonymous Pro';
+}
