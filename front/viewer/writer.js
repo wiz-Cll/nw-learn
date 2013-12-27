@@ -35,7 +35,7 @@ define( function( require, exports, module ){
     var _event = {
         bind: function(){
 
-            var mdSCrollSync = new ScrollSyncer( $(window.frames['md']), previewZone );
+            var mdSCrollSync = new ScrollSyncer( window.frames['md'], previewZone.get(0) );
             // exportBtnObj.bind('click', _event.convertMD );
             _event.bindTimer();
         },
@@ -51,7 +51,7 @@ define( function( require, exports, module ){
             }, 1000 );
             convertTimer = setInterval( function(){
                 _event.convertMD();
-            }, 3000 );
+            }, 1000 );
         },
         // 滚动跟随
         bindScrollSync: function(){
